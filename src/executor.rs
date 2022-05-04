@@ -1,7 +1,10 @@
+mod registers;
 use crate::format::{FileHeader, HEADER_SIZE};
+use registers::Registers;
 
 pub struct Executor {
     stack: Vec<u8>,
+    registers: Registers,
 }
 
 impl Executor {
@@ -9,6 +12,7 @@ impl Executor {
         let mut s = Self {
             // Initialize the stack with 128MiB of memory.
             stack: vec![0; 134217728],
+            registers: Registers::new(),
         };
 
         s.initialize_executor(exe);
@@ -48,6 +52,15 @@ impl Executor {
             header.data_size as usize..header.text_size as usize,
             text.iter().cloned(),
         );
+
+        self.registers.sp = (self.stack.len() - 1) as u64;
+        self.registers.ip = header.entry_point;
+
+        println!(
+            "Stack pointer: {}\nInstruction pointer: {}",
+            self.registers.sp, self.registers.ip
+        );
+        println!("Stack size: {}", self.stack.len() - 1);
 
         Ok(())
     }

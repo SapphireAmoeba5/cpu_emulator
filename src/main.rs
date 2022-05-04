@@ -1,5 +1,6 @@
 mod executor;
 mod format;
+mod opcodes;
 
 use clap::Parser;
 use executor::Executor;
