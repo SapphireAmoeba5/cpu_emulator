@@ -1,0 +1,4 @@
+Magic number - {0x77, 0x65, 0x78, 0x65, 0x0, 0x0, 0x0, 0x0}
+Next 8 bytes - Entry point
+Next 8 bytes - Start of data section
+Next 8 bytes length of data section in bytes
