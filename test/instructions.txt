@@ -1,0 +1,43 @@
+mov [reg], [reg]
+mov [reg], [imm64]
+
+ldr [reg], [addr]
+ldrzx [reg], [addr]
+
+str [reg], [addr]
+
+str [addr], [imm64]
+str [addr], [imm32]
+str [addr], [imm16]
+str [addr], [imm8]
+
+add [reg], [imm64]
+add [reg], [reg]
+
+sub [reg], [imm64]
+sub [reg], [reg]
+
+mul [reg], [imm64]
+mul [reg], [reg]
+
+div [reg], [imm64]
+dev [reg], [reg]
+
+cmp [reg], [reg]
+cmp [reg], [imm64]
+
+jmp [loc]
+
+jz [loc]
+jnz [loc]
+
+je [loc]
+jne [loc]
+
+jg [loc]
+jge [loc]
+
+jl[loc]
+jle[loc]
+
+syscall

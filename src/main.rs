@@ -1,10 +1,11 @@
 mod executor;
-mod format;
+mod header;
 mod opcodes;
+mod section_header;
 
 use clap::Parser;
 use executor::Executor;
-use format::{FileHeader, MAGIC_NUMBER};
+use header::{FileHeader, MAGIC_NUMBER};
 use std::fs;
 
 #[derive(Parser, Debug)]
